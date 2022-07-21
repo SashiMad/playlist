@@ -4,9 +4,14 @@ import "./App.css";
 
 function App() {
   const [isActive, setActive] = useState(false);
+  const [isPlay, setPlay] = useState(false);
 
-  const handleToggle = () => {
+  const handleToggleSave = () => {
     setActive(!isActive);
+  };
+
+  const handleTogglePlay = () => {
+    setPlay(!isPlay);
   };
 
   return (
@@ -18,11 +23,14 @@ function App() {
           <h3>Lorem ipsum</h3>
           <h4>Lorem ipsum</h4>
 
-          <button className="button-play"></button>
+          <button
+            className={isPlay ? "button-play" : "button-pause"}
+            onClick={handleTogglePlay}
+          ></button>
 
           <button
             className={isActive ? "button-save" : "button-saved"}
-            onClick={handleToggle}
+            onClick={handleToggleSave}
           ></button>
         </li>
         <li>
