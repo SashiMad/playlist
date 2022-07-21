@@ -1,5 +1,4 @@
 import React from "react";
-import Song from "./Song";
 
 import "./App.css";
 
@@ -10,10 +9,13 @@ function App() {
         <li>
           <h3>Lorem ipsum</h3>
           <h4>Lorem ipsum</h4>
+
+          <button className="button-play"></button>
         </li>
         <li>
           <h3>Lorem ipsum</h3>
           <h4>Lorem ipsum</h4>
+          <button className="button-pause"></button>
         </li>
         <li>
           <h3>Lorem ipsum</h3>

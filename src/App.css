@@ -23,10 +23,44 @@ h3 {
 h4 {
   font-size: 16px;
   color: #e5e6ec;
-
   margin: 0;
 }
 
-.song-title {
-  text-align: left;
+.button-play {
+  background: #ee8185 url("./images/play.svg") no-repeat;
+  background-size: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  border: none;
+  box-shadow: 0px 4px 40px rgb(39 33 66 / 5%);
+  border-radius: 50%;
+  background-position: center;
+  transition: transform 150ms ease-in-out;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-pause {
+  background: #ec6683 url("./images/pause.svg") no-repeat;
+  background-size: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  border: none;
+  box-shadow: 0px 4px 40px rgb(39 33 66 / 5%);
+  border-radius: 50%;
+  background-position: center;
+  transition: transform 150ms ease-in-out;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
