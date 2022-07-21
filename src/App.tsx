@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 
 function App() {
+  const [isActive, setActive] = useState(false);
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
+
   return (
     <div className="App">
       <ul>
@@ -13,7 +19,11 @@ function App() {
           <h4>Lorem ipsum</h4>
 
           <button className="button-play"></button>
-          <button className="button-save"></button>
+
+          <button
+            className={isActive ? "button-save" : "button-saved"}
+            onClick={handleToggle}
+          ></button>
         </li>
         <li>
           <button className="thumbnail"></button>
