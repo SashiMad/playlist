@@ -2,36 +2,38 @@ import React, { useState } from "react";
 
 import "./App.css";
 
-function App() {
-  const [isActive, setActive] = useState(false);
-  const [isPlay, setPlay] = useState(false);
+const App = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [isPlay, setIsPlay] = useState(false);
 
   const handleToggleSave = () => {
-    setActive(!isActive);
+    setIsActive(!isActive);
   };
 
   const handleTogglePlay = () => {
-    setPlay(!isPlay);
+    setIsPlay(!isPlay);
   };
 
   return (
     <div className="App">
       <ul>
         <li>
-          <button className="thumbnail"></button>
+          <div className="list-content">
+            <button className="thumbnail"></button>
 
-          <h3>Lorem ipsum</h3>
-          <h4>Lorem ipsum</h4>
+            <h3>Lorem ipsum </h3>
+            <h4>Lorem ipsum</h4>
 
-          <button
-            className={isPlay ? "button-play" : "button-pause"}
-            onClick={handleTogglePlay}
-          ></button>
+            <button
+              className={isPlay ? "button-play" : "button-pause"}
+              onClick={handleTogglePlay}
+            ></button>
 
-          <button
-            className={isActive ? "button-save" : "button-saved"}
-            onClick={handleToggleSave}
-          ></button>
+            <button
+              className={isActive ? "button-save" : "button-saved"}
+              onClick={handleToggleSave}
+            ></button>
+          </div>
         </li>
         <li>
           <button className="thumbnail"></button>
@@ -55,6 +57,6 @@ function App() {
       </ul>
     </div>
   );
-}
+};
 
 export default App;

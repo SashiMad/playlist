@@ -12,7 +12,7 @@ li {
   text-align: center;
   width: auto;
   padding: 30px;
-  border-radius: 6px;
+  border-radius: 30px;
   box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
   margin: 40px 10px;
   background-color: #242833;
@@ -24,18 +24,23 @@ li:hover {
   transition: transform 250ms ease-in-out;
 }
 
+.list-content {
+  padding: 15px;
+}
+
 h3 {
   font-size: 18px;
   color: #e5e6ec;
-  margin-bottom: 10px;
-  margin-left: -180px;
+  margin-top: 0px;
+
+  margin-left: -240px;
 }
 
 h4 {
   font-size: 16px;
   color: #e5e6ec;
   margin: 0;
-  margin-left: -190px;
+  margin-left: -250px;
 }
 
 .button-play {
@@ -54,7 +59,7 @@ h4 {
   cursor: pointer;
   outline: none;
   position: relative;
-  margin-top: -70px;
+  margin-top: -90px;
 }
 
 .button-pause {
@@ -73,7 +78,7 @@ h4 {
   cursor: pointer;
   outline: none;
   position: relative;
-  margin-top: -70px;
+  margin-top: -90px;
 }
 
 .button-pause:hover {
@@ -104,13 +109,11 @@ h4 {
   box-shadow: 0 5px 25px rgb(0 0 0 / 70%);
   border-radius: 4px;
   background-position: center;
-
-  width: 100px;
-  height: 100px;
-
+  width: 110px;
+  height: 110px;
   outline: none;
   position: relative;
-  margin-bottom: -80px;
+  margin-bottom: -65px;
   padding: 20px;
 }
 
