@@ -56,4 +56,4 @@ type TrendingSong = {
 
 type TrendingSongsResponse = Array<TrendingSong>;
 
-export type { TrendingSongsResponse };
+export type { TrendingSongsResponse, TrendingSong };

@@ -1,59 +1,33 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 
 import "./App.css";
+import { Song as SongComponent } from "./Song";
+import { TrendingSongsResponse } from "./types/Types";
 
 const App = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [isPlay, setIsPlay] = useState(false);
+  const [songs, setSongs] = useState<TrendingSongsResponse>([]);
 
-  const handleToggleSave = () => {
-    setIsActive(!isActive);
-  };
+  const fetchTrendingSongs = useCallback(async () => {
+    const result = await (
+      await axios.get<TrendingSongsResponse>(
+        "https://api-stg.jam-community.com/song/trending"
+      )
+    ).data;
 
-  const handleTogglePlay = () => {
-    setIsPlay(!isPlay);
-  };
+    setSongs(result);
+  }, []);
+
+  useEffect(() => {
+    fetchTrendingSongs();
+  }, []);
 
   return (
     <div className="App">
       <ul>
-        <li>
-          <div className="list-content">
-            <button className="thumbnail"></button>
-
-            <h3>Lorem ipsum </h3>
-            <h4>Lorem ipsum</h4>
-
-            <button
-              className={isPlay ? "button-play" : "button-pause"}
-              onClick={handleTogglePlay}
-            ></button>
-
-            <button
-              className={isActive ? "button-save" : "button-saved"}
-              onClick={handleToggleSave}
-            ></button>
-          </div>
-        </li>
-        <li>
-          <button className="thumbnail"></button>
-          <h3>Lorem ipsum</h3>
-          <h4>Lorem ipsum</h4>
-          <button className="button-pause"></button>
-          <button className="button-saved"></button>
-        </li>
-        <li>
-          <h3>Lorem ipsum</h3>
-          <h4>Lorem ipsum</h4>
-        </li>
-        <li>
-          <h3>Lorem ipsum</h3>
-          <h4>Lorem ipsum</h4>
-        </li>
-        <li>
-          <h3>Lorem ipsum</h3>
-          <h4>Lorem ipsum</h4>
-        </li>
+        {songs.map((song) => (
+          <SongComponent song={song} playSong={(id: string) => {}} />
+        ))}
       </ul>
     </div>
   );
